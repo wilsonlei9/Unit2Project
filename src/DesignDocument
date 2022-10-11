@@ -1,0 +1,37 @@
+LinearEquation class
+Instance variables:
+private int x
+private int y
+private int x2
+private int y2
+
+Methods:
+public double slope(int x, int y, int x2, int y2)
+returns (y2 - y1) - (x2 - x1) + "x" and converts into fraction
+
+public int yIntercept(int x, int y)
+returns (0-x)*slope + y
+
+public double distance(int x, int y, int x2, int y2)
+returns square root of (x2-x1)^2 + (y2-y1)^2
+
+public double solveCoordinatePoint(int x)
+plugs in x into linear equation and returns (x,y)
+
+public String toString()
+displays all information
+
+Constructor:
+public LinerEquation(double slope, int yIntercept)
+returns slope + " +" + yIntercept
+
+EquationRunner.Java
+Use scanner
+Ask user for first coordinate point
+Ask user for second coordinate point
+Calculate slope with slope method
+Calculate y intercept with yIntercept method
+Show linear equation with LinearEquation constructor
+Calculate distance between two points with distance method
+Ask user for a new x value
+Show coordinate point with new x value and solved y value with solveCoordinatePoint method
