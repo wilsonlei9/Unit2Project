@@ -7,7 +7,7 @@ private int y2
 
 Methods:
 public double slope(int x, int y, int x2, int y2)
-returns (y2 - y1) - (x2 - x1) + "x" and converts into fraction
+returns (y2 - y1) / (x2 - x1) + "x" and converts into fraction
 
 public int yIntercept(int x, int y)
 returns (0-x)*slope + y
