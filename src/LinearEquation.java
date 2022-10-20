@@ -1,36 +1,46 @@
 public class LinearEquation {
-    int x;
-    int y;
-    int x2;
-    int y2;
+    private int x1;
+    private int y1;
+    private int x2;
+    private int y2;
+    private double slope;
+    private int yIntercept;
+    private double distance;
 
-    public String slope(int x, int y, int x2, int y2){
-        return (double)(y2 - y) / (x2 - x) + "x";
+    public LinearEquation(int x1, int y1, int x2, int y2)
+    {
+        this.x1 = x1;
+        this.y1 = y1;
+        this.x2 = x2;
+        this.y2 = y2;
     }
 
-    public double getSlope(){
-        return (double)((y2 - y) / (x2 - x));
+    public double calculateSlope()
+    {
+        slope = (y2 - y1) / (x2 - x1);
+        return slope;
     }
 
-    public int yIntercept(int x, int y){
-        return  (int)(-x*getSlope()+y) ;
+    public int yIntercept()
+    {
+        yIntercept = (int) ((-x1) * calculateSlope() + y1);
+        return yIntercept;
     }
 
-    public int getYIntercept(){
-        return (int) (-x*getSlope()+y);
+    public double calculateDistance()
+    {
+        distance = Math.round(Math.sqrt((Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)))*100/100);
+        return distance;
     }
 
-    public double distance(int x, int y, int x2, int y2){
-        return Math.sqrt((Math.pow(x2-x, 2)+Math.pow(y2-y, 2)));
-    }
-
-    public LinearEquation(double slope, int yIntercept){
-        slope = getSlope();
-        yIntercept = getYIntercept();
-        System.out.print(slope + "x" + yIntercept);
-    }
-
-    public String toString(){
-        return "First pair: " + "(" + x + (",") + y + ")\n" + "Second pair: " + "(" + x2 + (",") + y2 + ")";
+    public String toString()
+    {
+        String str = "First pair: " + "(" + x1 + "," + y1 + ")\n";
+        str += "Second pair : " + "(" + x2 + "," + y2 + ")\n";
+        str += "Slope of line: " + slope + "\n";
+        str += "Y intercept: " + yIntercept + "\n";
+        str += "Slope intercept form: " + slope + "x" + " + " + yIntercept + "\n";
+        str += "Distance between two points: " + distance + "\n";
+        return str;
     }
 }

@@ -4,26 +4,27 @@ private int x
 private int y
 private int x2
 private int y2
+private double slope
+private int yIntercept
+private double distance
+
+Constructor:
+public LinerEquation(int x1, int y1, int x2, int y2)
+Uses instance variables
 
 Methods:
-public double slope(int x, int y, int x2, int y2)
-returns (y2 - y1) / (x2 - x1) + "x" and converts into fraction
+public double calculateSlope()
+Calculates slope and stores it in a variable. Returns the variable.
 
-public int yIntercept(int x, int y)
-returns (0-x)*slope + y
+public int yIntercept()
+Calculates y intercept and stores it in a variable. Returns the variable.
 
-public double distance(int x, int y, int x2, int y2)
-returns square root of (x2-x1)^2 + (y2-y1)^2
-
-public double solveCoordinatePoint(int x)
-plugs in x into linear equation and returns (x,y)
+public double calculateDistance(int x, int y, int x2, int y2)
+Calculates and rounds the distance and stores it in a variable. Returns the variable.
 
 public String toString()
 displays all information
 
-Constructor:
-public LinerEquation(double slope, int yIntercept)
-returns slope + " +" + yIntercept
 
 EquationRunner.Java
 Use scanner
@@ -31,7 +32,7 @@ Ask user for first coordinate point
 Ask user for second coordinate point
 Calculate slope with slope method
 Calculate y intercept with yIntercept method
-Show linear equation with LinearEquation constructor
-Calculate distance between two points with distance method
-Ask user for a new x value
-Show coordinate point with new x value and solved y value with solveCoordinatePoint method
+Calculate distance with distance method
+Display information with toString()
+Ask user for new x coordinate
+Solve for new coordinate point by plugging in new x coordinate into linear equation
